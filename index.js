@@ -1,11 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const { setupRoutes } = require("./sendMail/routes.js");
 const { setupMailer } = require('./sendMail/mailer.js');
 require('dotenv').config();
 
 const app = express();
-app.use(cors({ origin: "*" }))
+app.use(cors({ origin: "*" }));
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.json());
 
 const PORT = process.env.PORT || 4000;
