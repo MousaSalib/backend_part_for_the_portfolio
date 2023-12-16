@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({ origin: "*" }))
 app.use(express.json());
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 4000;
 const emailConfig = {
   user: process.env.EMAIL_USER,
   pass: process.env.EMAIL_PASS
